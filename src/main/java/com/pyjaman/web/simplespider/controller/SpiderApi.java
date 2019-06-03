@@ -1,13 +1,10 @@
 package com.pyjaman.web.simplespider.controller;
 
-import com.pyjaman.web.simplespider.model.AreaInfoModel;
 import com.pyjaman.web.simplespider.service.SpiderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 /**
  * 爬虫接口类

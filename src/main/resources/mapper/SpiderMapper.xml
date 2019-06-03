@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.pyjaman.web.simplespider.mapper.SpiderMapper">
     <insert id="insertAreaInformation">
-      insert into ppo_cube_dev.dm_ppo_region_code
+      insert into db_ppo_dev.dm_ppo_region_code
       (region_code,region_name,ppo_name,parent_id,old_region_code,ppo_level) values
       <foreach collection="map" item="item" index="index" separator=",">
           <if test="item.regionCode.length() == 6">

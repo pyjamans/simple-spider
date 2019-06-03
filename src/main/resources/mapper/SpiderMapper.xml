@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pyjaman.web.simplespider.mapper.SpiderMapper">
+    <insert id="insertAreaInformation">
+      insert into ppo_cube_dev.dm_ppo_region_code
+      (region_code,region_name,ppo_name,parent_id,old_region_code,ppo_level) values
+      <foreach collection="map" item="item" index="index" separator=",">
+          <if test="item.regionCode.length() == 6">
+              (#{item.regionCode},#{item.regionName},concat(#{item.regionName},'人民检察院'),#{item.parentCode},#{item.regionCode},3)
+          </if>
+          <if test="item.regionCode.length() == 4">
+              (#{item.regionCode},#{item.regionName},'',#{item.parentCode},#{item.regionCode},0),
+              (concat(#{item.regionCode},'00'),#{item.regionName},concat(#{item.regionName},'人民检察院'),#{item.regionCode},concat(#{item.regionCode},'00'),2)
+          </if>
+          <if test="item.regionCode.length() == 2">
+              (#{item.regionCode},#{item.regionName},'',#{item.parentCode},#{item.regionCode},0),
+              (concat(#{item.regionCode},'0000'),#{item.regionName},concat(#{item.regionName},'人民检察院'),#{item.regionCode},concat(#{item.regionCode},'0000'),1)
+          </if>
+      </foreach>
+    </insert>
+</mapper>

@@ -1,6 +1,5 @@
 package com.pyjaman.web.simplespider.model;
 
-import lombok.Data;
 
 /**
  * 地区行政区划编码信息实体类
@@ -8,7 +7,6 @@ import lombok.Data;
  * @author pyjaman
  * @date 2019-05-26
  */
-@Data
 public class AreaInfoModel {
 
     /**
@@ -26,4 +24,36 @@ public class AreaInfoModel {
      */
     private String parentCode;
 
+    public String getRegionCode() {
+        return regionCode;
+    }
+
+    public void setRegionCode(String regionCode) {
+        this.regionCode = regionCode;
+    }
+
+    public String getRegionName() {
+        return regionName;
+    }
+
+    public void setRegionName(String regionName) {
+        this.regionName = regionName;
+    }
+
+    public String getParentCode() {
+        return parentCode;
+    }
+
+    public void setParentCode(String parentCode) {
+        this.parentCode = parentCode;
+    }
+
+    @Override
+    public String toString() {
+        return "AreaInfoModel{" +
+                "regionCode='" + regionCode + '\'' +
+                ", regionName='" + regionName + '\'' +
+                ", parentCode='" + parentCode + '\'' +
+                '}';
+    }
 }

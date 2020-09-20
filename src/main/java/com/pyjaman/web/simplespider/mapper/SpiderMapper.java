@@ -1,6 +1,7 @@
 package com.pyjaman.web.simplespider.mapper;
 
 import com.pyjaman.web.simplespider.model.AreaInfoModel;
+import com.pyjaman.web.simplespider.pojo.CaseInfoVO;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -22,4 +23,5 @@ public interface SpiderMapper {
      */
     int insertAreaInformation(@Param(value = "map")List<AreaInfoModel> dataList);
 
+    void insertCaseInformation(@Param(value = "map")List<CaseInfoVO> dataList);
 }

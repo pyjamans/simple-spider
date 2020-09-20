@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SpiderUtil {
+public class AreaSpiderUtil {
 
     /**
      * 通过url爬取网页，获取网页的document对象，解析html获取td元素，再获取td元素中的a标签元素
